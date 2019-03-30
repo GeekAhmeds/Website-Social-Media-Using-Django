@@ -23,7 +23,7 @@ class LoginRequiredMiddleWare:
         #         return redirect(settings.LOGIN_URL)
 
         url_is_exempt =  any(url.match(path) for url in EXEMPT_URLS)
-        if path == reverse('logout'):
+        if path == reverse('accounts:logout'):
             logout(request)
         if request.user.is_authenticated and url_is_exempt:
             return redirect(settings.LOGIN_REDIRECT_URL)

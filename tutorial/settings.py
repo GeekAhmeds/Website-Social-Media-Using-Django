@@ -126,6 +126,8 @@ LOGOUT_REDIRECT_URLS = '/account/'
 LOGIN_EXEMPT_URL = (
     'account/logout/',
     'account/register/',
+    'account/password_reset/',
+
 )
 
 

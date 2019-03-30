@@ -28,7 +28,7 @@ def view_profile(request):
     args = {'user': request.user}
     return render(request, 'accounts/profile.html', args)
 
-@login_required(login_url='/account/login/')
+# @login_required(login_url='/account/login/')
 def edit_profile(request):
     if request.method == 'POST':
         form = EditProfileForm(request.POST, instance=request.user)
@@ -41,7 +41,7 @@ def edit_profile(request):
         form = EditProfileForm(instance=request.user)
         args = {'form':form}
         return render(request, 'accounts/edit_profile.html', args )
-@login_required(login_url='/account/login/')
+# @login_required(login_url='/account/login/')
 def change_password(request):
     if request.method == 'POST':
         form = PasswordChangeForm(data=request.POST, user=request.user)

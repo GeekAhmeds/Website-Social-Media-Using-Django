@@ -15,7 +15,7 @@
   <body>
   <br>
  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">siteName</a>
+  <a class="navbar-brand" href="{% url 'accounts:home' %}">siteName</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -23,27 +23,27 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
      {% if user.is_authenticated %}
     <ul class="navbar-nav mr-auto">
-        <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
-      <li class="nav-item"><a class="nav-link" href="{% url 'view_profile' %}">Profile {{user.first_name}}</a></li>
-      <li class="nav-item"><a class="nav-link" href="/account/profile/edit/">Edit Profile</a></li>
-      <li class="nav-item"><a class="nav-link" href="/account/change-password">Change Password</a></li>
+        <a class="nav-link" href="{% url 'accounts:home' %}">Home <span class="sr-only"></span></a>
+      <li class="nav-item"><a class="nav-link" href="{% url 'accounts:view_profile' %}">Profile {{user.first_name}}</a></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'accounts:edit_profile' %}">Edit Profile</a></li>
+      <li class="nav-item"><a class="nav-link" href="{% url 'accounts:change_password' %}">Change Password</a></li>
     </ul>
     <ul class="navbar-nav navbar-right">
-        <a class="btn btn-outline-info my-2 my-sm-0" href="/account/logout">Logout</a>
+        <a class="btn btn-outline-info my-2 my-sm-0" href="{% url 'accounts:logout' %}">Logout</a>
       </ul>
 
       {% else %}
 
 
       <ul class="navbar-nav mr-auto">
-          <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
-          <li class="nav-item"><a class="nav-link" href="/account/password_reset">Reset Password</a></li>
+          <a class="nav-link" href="{% url 'accounts:home' %}">Home <span class="sr-only"></span></a>
+          <li class="nav-item"><a class="nav-link" href="{% url 'accounts:password_reset' %}">Reset Password</a></li>
 
 
       </ul>
       <ul class="navbar-nav navbar-right">
-          <a class="btn btn-outline-success my-2 my-sm-0" href="/account/register">Register</a>
-          <a class="btn btn-outline-info my-2 my-sm-0" href="/account/login">Login</a>
+          <a class="btn btn-outline-success my-2 my-sm-0" href="{% url 'accounts:register' %}">Register</a>
+          <a class="btn btn-outline-info my-2 my-sm-0" href="{% url 'accounts:login' %}">Login</a>
         </ul>
       {% endif %}
   </div>
