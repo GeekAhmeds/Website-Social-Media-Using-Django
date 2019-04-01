@@ -130,7 +130,7 @@ LOGIN_EXEMPT_URL = (
 
 )
 
-
+#Send Email For Users to verfication or activate his account
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com' # mail service smtp
 EMAIL_HOST_USER = 'salaha292' # email id
